@@ -118,16 +118,57 @@ button {
 }
 
 a.primary,
-a.secondary {
+a.secondary,
+button.go {
   display: inline-flex;
   align-items: center;
   min-height: 2.75rem;
   padding: 0.45rem 0.95rem;
 }
 
-a.primary {
+a.primary,
+button.go {
   background: var(--press);
   color: var(--press-ink);
+}
+
+button.go {
+  margin-top: 0.15rem;
+  border: 0;
+  text-decoration: none;
+}
+
+button.go:disabled {
+  cursor: wait;
+  opacity: 0.65;
+}
+
+.unlock {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.7rem;
+  width: min(100%, 18rem);
+  margin: 1.75rem 0 0;
+}
+
+.unlock label {
+  color: var(--quiet);
+}
+
+.unlock input {
+  width: 100%;
+  min-height: 2.75rem;
+  padding: 0.45rem 0.75rem;
+  border: 1.5px solid var(--press);
+  background: var(--plate);
+  color: var(--ink);
+  font: inherit;
+}
+
+.err {
+  margin: 0;
+  color: #8a2e24;
 }
 
 a.secondary {
