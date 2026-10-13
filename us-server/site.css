@@ -63,79 +63,85 @@ body {
 }
 
 main {
-  width: min(36rem, calc(100% - 2.5rem));
-  margin: 2.75rem 0 4.5rem max(1.25rem, 7vw);
+  width: min(38rem, calc(100% - 2.5rem));
+  margin: 2.5rem 0 4.5rem max(1.25rem, 7vw);
 }
 
 h1 {
   margin: 0;
   font-family: Fraunces, "Songti SC", serif;
   font-weight: 500;
-  font-size: clamp(3.5rem, 9vw, 5.4rem);
-  letter-spacing: -0.035em;
-  line-height: 0.92;
+  font-size: clamp(3.4rem, 8vw, 5.1rem);
+  letter-spacing: -0.04em;
+  line-height: 0.9;
 }
 
 .where {
-  margin: 0.85rem 0 0;
+  margin: 0.9rem 0 0;
   color: var(--quiet);
 }
 
-.where + .where {
-  margin-top: 0.1rem;
-}
-
-figure {
-  margin: 1.75rem 0 0;
-}
-
-figure img {
-  display: block;
-  width: min(100%, 20.5rem);
-  height: auto;
-  background: #fff;
-  padding: 0.65rem;
-}
-
-figcaption {
-  max-width: 34rem;
+.lead {
   margin: 0.85rem 0 0;
+  max-width: 36rem;
+}
+
+h2 {
+  margin: 2.2rem 0 0.35rem;
+  font-family: Fraunces, "Songti SC", serif;
+  font-weight: 500;
+  font-size: 1.7rem;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+}
+
+.url {
+  margin: 0.85rem 0 0;
+  padding: 0.8rem 0.9rem;
+  background: var(--plate);
+  color: var(--ink);
+  font-family: "Atkinson Hyperlegible", ui-monospace, monospace;
+  font-size: 0.98rem;
+  line-height: 1.45;
+  overflow-wrap: anywhere;
 }
 
 .actions {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.75rem;
-  margin: 1.35rem 0 0;
+  gap: 0.7rem;
+  margin: 0.9rem 0 0;
 }
 
 a.primary,
-a.secondary,
-button {
+button.secondary,
+button.go {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.75rem;
+  padding: 0.45rem 0.95rem;
   font: inherit;
   text-decoration: none;
   cursor: pointer;
 }
 
 a.primary,
-a.secondary,
 button.go {
-  display: inline-flex;
-  align-items: center;
-  min-height: 2.75rem;
-  padding: 0.45rem 0.95rem;
-}
-
-a.primary,
-button.go {
+  border: 0;
   background: var(--press);
   color: var(--press-ink);
 }
 
+button.secondary {
+  border: 0;
+  background: transparent;
+  color: var(--press);
+  box-shadow: inset 0 0 0 1.5px var(--press);
+}
+
 button.go {
   margin-top: 0.15rem;
-  border: 0;
-  text-decoration: none;
 }
 
 button.go:disabled {
@@ -143,13 +149,25 @@ button.go:disabled {
   opacity: 0.65;
 }
 
+button.link {
+  margin: 0.7rem 0 0;
+  padding: 0.15rem 0;
+  border: 0;
+  background: transparent;
+  color: var(--focus);
+  font: inherit;
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+  cursor: pointer;
+}
+
 .unlock {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   gap: 0.7rem;
-  width: min(100%, 18rem);
-  margin: 1.75rem 0 0;
+  width: min(100%, 22rem);
+  margin: 1.15rem 0 0;
 }
 
 .unlock label {
@@ -159,7 +177,7 @@ button.go:disabled {
 .unlock input {
   width: 100%;
   min-height: 2.75rem;
-  padding: 0.45rem 0.75rem;
+  padding: 0.5rem 0.75rem;
   border: 1.5px solid var(--press);
   background: var(--plate);
   color: var(--ink);
@@ -171,55 +189,28 @@ button.go:disabled {
   color: #8a2e24;
 }
 
-a.secondary {
-  background: transparent;
-  color: var(--press);
-  box-shadow: inset 0 0 0 1.5px var(--press);
+figure {
+  margin: 0.85rem 0 0;
 }
 
-button {
-  margin-top: 0.75rem;
-  border: 0;
-  background: transparent;
-  color: var(--focus);
-  padding: 0.2rem 0;
-  text-decoration: underline;
-  text-underline-offset: 0.18em;
+figure img {
+  display: block;
+  width: min(100%, 16.5rem);
+  height: auto;
+  background: #fff;
+  padding: 0.6rem;
 }
 
-h2 {
-  margin: 2.4rem 0 0.45rem;
-  font-family: Fraunces, "Songti SC", serif;
-  font-weight: 500;
-  font-size: 1.65rem;
-  letter-spacing: -0.02em;
-  line-height: 1.15;
+figcaption {
+  max-width: 34rem;
+  margin: 0.75rem 0 0;
 }
 
-.lead {
-  margin: 0;
-  max-width: 36rem;
-}
-
-.url {
-  margin: 0.8rem 0 0;
-  padding: 0.75rem 0.85rem;
-  background: var(--plate);
-  color: var(--ink);
-  font-family: "Atkinson Hyperlegible", ui-monospace, monospace;
-  font-size: 0.95rem;
-  line-height: 1.4;
-  overflow-wrap: anywhere;
-}
-
-ul {
-  margin: 0.4rem 0 0;
-  padding: 0;
-  list-style: none;
-}
-
-li {
-  margin: 0.35rem 0;
+.more {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 1.2rem;
+  margin: 2.1rem 0 0;
 }
 
 a {
@@ -227,20 +218,26 @@ a {
 }
 
 a:focus-visible,
-button:focus-visible {
+button:focus-visible,
+input:focus-visible {
   outline: 2px solid var(--focus);
   outline-offset: 3px;
 }
 
 .note {
-  margin: 2rem 0 0;
+  margin: 1.4rem 0 0;
   color: var(--quiet);
   max-width: 36rem;
 }
 
 @media (max-width: 640px) {
   main {
-    margin-top: 1.5rem;
+    margin-top: 1.4rem;
     margin-bottom: 3rem;
+  }
+
+  .actions a.primary,
+  .actions button.secondary {
+    flex: 1 1 12rem;
   }
 }
