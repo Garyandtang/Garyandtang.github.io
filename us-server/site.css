@@ -1,0 +1,205 @@
+@font-face {
+  font-family: "Fraunces";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("fonts/fraunces.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Fraunces";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("fonts/fraunces-700.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Atkinson Hyperlegible";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("fonts/atkinson.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Atkinson Hyperlegible";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("fonts/atkinson-700.woff2") format("woff2");
+}
+
+:root {
+  --paper: #d5e4e8;
+  --ink: #1a242c;
+  --quiet: #3d515b;
+  --plate: #f7fbfc;
+  --press: #14343c;
+  --press-ink: #f3fafb;
+  --line: #8eacb4;
+  --focus: #0e6b62;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background: var(--paper);
+}
+
+body {
+  margin: 0;
+  color: var(--ink);
+  background-color: var(--paper);
+  background-image:
+    linear-gradient(to right, rgba(20, 52, 60, 0.045) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(20, 52, 60, 0.045) 1px, transparent 1px);
+  background-size: 28px 28px;
+  font-family: "Atkinson Hyperlegible", "Songti SC", "Noto Serif SC", "PMingLiU", serif;
+  font-size: 1.0625rem;
+  line-height: 1.55;
+}
+
+main {
+  width: min(36rem, calc(100% - 2.5rem));
+  margin: 2.75rem 0 4.5rem max(1.25rem, 7vw);
+}
+
+h1 {
+  margin: 0;
+  font-family: Fraunces, "Songti SC", serif;
+  font-weight: 500;
+  font-size: clamp(3.5rem, 9vw, 5.4rem);
+  letter-spacing: -0.035em;
+  line-height: 0.92;
+}
+
+.where {
+  margin: 0.85rem 0 0;
+  color: var(--quiet);
+}
+
+.where + .where {
+  margin-top: 0.1rem;
+}
+
+figure {
+  margin: 1.75rem 0 0;
+}
+
+figure img {
+  display: block;
+  width: min(100%, 20.5rem);
+  height: auto;
+  background: #fff;
+  padding: 0.65rem;
+}
+
+figcaption {
+  max-width: 34rem;
+  margin: 0.85rem 0 0;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin: 1.35rem 0 0;
+}
+
+a.primary,
+a.secondary,
+button {
+  font: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+a.primary,
+a.secondary {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.75rem;
+  padding: 0.45rem 0.95rem;
+}
+
+a.primary {
+  background: var(--press);
+  color: var(--press-ink);
+}
+
+a.secondary {
+  background: transparent;
+  color: var(--press);
+  box-shadow: inset 0 0 0 1.5px var(--press);
+}
+
+button {
+  margin-top: 0.75rem;
+  border: 0;
+  background: transparent;
+  color: var(--focus);
+  padding: 0.2rem 0;
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+}
+
+h2 {
+  margin: 2.4rem 0 0.45rem;
+  font-family: Fraunces, "Songti SC", serif;
+  font-weight: 500;
+  font-size: 1.65rem;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+}
+
+.lead {
+  margin: 0;
+  max-width: 36rem;
+}
+
+.url {
+  margin: 0.8rem 0 0;
+  padding: 0.75rem 0.85rem;
+  background: var(--plate);
+  color: var(--ink);
+  font-family: "Atkinson Hyperlegible", ui-monospace, monospace;
+  font-size: 0.95rem;
+  line-height: 1.4;
+  overflow-wrap: anywhere;
+}
+
+ul {
+  margin: 0.4rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+li {
+  margin: 0.35rem 0;
+}
+
+a {
+  color: var(--focus);
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 3px;
+}
+
+.note {
+  margin: 2rem 0 0;
+  color: var(--quiet);
+  max-width: 36rem;
+}
+
+@media (max-width: 640px) {
+  main {
+    margin-top: 1.5rem;
+    margin-bottom: 3rem;
+  }
+}

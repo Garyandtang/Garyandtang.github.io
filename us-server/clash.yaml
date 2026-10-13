@@ -1,0 +1,32 @@
+mixed-port: 7890
+allow-lan: false
+mode: rule
+log-level: info
+ipv6: false
+proxies:
+  - name: us-west-reality
+    type: vless
+    server: 47.254.39.13
+    port: 443
+    uuid: 9d70fe3e-eb51-490c-9e6e-f033a0c44d14
+    network: tcp
+    tls: true
+    udp: false
+    flow: xtls-rprx-vision
+    servername: www.apple.com
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: "_UZCbq8V_XtPe-N0RG1dWeMEhG1rZbDCXM-gAl3sOUs"
+      short-id: "63c008d235e17dd0"
+proxy-groups:
+  - name: PROXY
+    type: select
+    proxies:
+      - us-west-reality
+      - DIRECT
+rules:
+  - IP-CIDR,127.0.0.0/8,DIRECT,no-resolve
+  - IP-CIDR,10.0.0.0/8,DIRECT,no-resolve
+  - IP-CIDR,172.16.0.0/12,DIRECT,no-resolve
+  - IP-CIDR,192.168.0.0/16,DIRECT,no-resolve
+  - MATCH,PROXY

@@ -1,0 +1,36 @@
+{
+  "log": {
+    "level": "warn"
+  },
+  "inbounds": [
+    {
+      "type": "mixed",
+      "tag": "mixed-in",
+      "listen": "127.0.0.1",
+      "listen_port": 7890
+    }
+  ],
+  "outbounds": [
+    {
+      "type": "vless",
+      "tag": "us-west-reality",
+      "server": "47.254.39.13",
+      "server_port": 443,
+      "uuid": "9d70fe3e-eb51-490c-9e6e-f033a0c44d14",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.apple.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "_UZCbq8V_XtPe-N0RG1dWeMEhG1rZbDCXM-gAl3sOUs",
+          "short_id": "63c008d235e17dd0"
+        }
+      }
+    }
+  ]
+}

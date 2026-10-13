@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>US West</title>
+  <link rel="stylesheet" href="site.css">
+</head>
+<body>
+  <main>
+    <h1>US West</h1>
+    <p class="where">硅谷</p>
+    <p class="where">端口 443</p>
+
+    <figure>
+      <img src="qr.svg" width="360" height="360" alt="给 Clash Mi 扫的配置二维码">
+      <figcaption>用 Clash Mi 扫这个码，这份配置会加进去。</figcaption>
+    </figure>
+
+    <p class="actions">
+      <a class="primary" href="clashmi://install-config?url=https%3A%2F%2Fgaryandtang.github.io%2Fus-server%2Fclash.yaml&amp;name=US%20West">在 Clash Mi 中打开</a>
+      <a class="secondary" href="clash.yaml" download="clash.yaml">下载 clash.yaml</a>
+    </p>
+
+    <h2>订阅地址</h2>
+    <p class="lead">Mihomo、Clash Verge、ClashX Meta、FlClash 和 Mihomo Party 都填这一个地址。</p>
+    <p class="url" id="sub">https://garyandtang.github.io/us-server/clash.yaml</p>
+    <button type="button" id="copy">复制地址</button>
+
+    <h2>直接打开</h2>
+    <ul>
+      <li><a href="clash://install-config?url=https%3A%2F%2Fgaryandtang.github.io%2Fus-server%2Fclash.yaml&amp;name=US%20West">Clash Verge、ClashX、FlClash</a></li>
+      <li><a href="clashmeta://install-config?url=https%3A%2F%2Fgaryandtang.github.io%2Fus-server%2Fclash.yaml&amp;name=US%20West">Clash Meta（Android）</a></li>
+      <li><a href="stash://install-config?url=https%3A%2F%2Fgaryandtang.github.io%2Fus-server%2Fclash.yaml&amp;name=US%20West">Stash</a></li>
+      <li><a href="mihomo.yaml" download="mihomo.yaml">另存为 mihomo.yaml</a></li>
+      <li><a href="sing-box.json" download="sing-box.json">下载 sing-box 配置</a></li>
+    </ul>
+
+    <h2>节点链接</h2>
+    <p class="lead">Shadowrocket 和 v2rayN 用这一条。</p>
+    <p class="url">vless://9d70fe3e-eb51-490c-9e6e-f033a0c44d14@47.254.39.13:443?encryption=none&amp;flow=xtls-rprx-vision&amp;security=reality&amp;sni=www.apple.com&amp;fp=chrome&amp;pbk=_UZCbq8V_XtPe-N0RG1dWeMEhG1rZbDCXM-gAl3sOUs&amp;sid=63c008d235e17dd0&amp;type=tcp#us-west-reality</p>
+
+    <p class="note">知道这个地址的人都能用这台服务器。不要把页面发出去。</p>
+  </main>
+  <script>
+    document.getElementById("copy").addEventListener("click", async function () {
+      var button = document.getElementById("copy");
+      var url = document.getElementById("sub").textContent.trim();
+      try {
+        await navigator.clipboard.writeText(url);
+        button.textContent = "已复制";
+      } catch (err) {
+        var range = document.createRange();
+        range.selectNodeContents(document.getElementById("sub"));
+        var selection = window.getSelection();
+        selection.removeAllRanges();
+        selection.addRange(range);
+        button.textContent = "请手动复制";
+      }
+    });
+  </script>
+</body>
+</html>
