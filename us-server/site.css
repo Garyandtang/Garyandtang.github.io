@@ -95,15 +95,27 @@ h2 {
   line-height: 1.1;
 }
 
-.url {
+.url,
+textarea.sub {
   margin: 0.85rem 0 0;
   padding: 0.8rem 0.9rem;
+  border: 0;
   background: var(--plate);
   color: var(--ink);
   font-family: "Atkinson Hyperlegible", ui-monospace, monospace;
   font-size: 0.98rem;
   line-height: 1.45;
+}
+
+.url {
   overflow-wrap: anywhere;
+}
+
+textarea.sub {
+  display: block;
+  width: 100%;
+  resize: none;
+  overflow: hidden;
 }
 
 .actions {
@@ -114,6 +126,8 @@ h2 {
 }
 
 a.primary,
+button.primary,
+a.secondary,
 button.secondary,
 button.go {
   display: inline-flex;
@@ -127,12 +141,14 @@ button.go {
 }
 
 a.primary,
+button.primary,
 button.go {
   border: 0;
   background: var(--press);
   color: var(--press-ink);
 }
 
+a.secondary,
 button.secondary {
   border: 0;
   background: transparent;
@@ -219,7 +235,8 @@ a {
 
 a:focus-visible,
 button:focus-visible,
-input:focus-visible {
+input:focus-visible,
+textarea:focus-visible {
   outline: 2px solid var(--focus);
   outline-offset: 3px;
 }
@@ -237,6 +254,8 @@ input:focus-visible {
   }
 
   .actions a.primary,
+  .actions button.primary,
+  .actions a.secondary,
   .actions button.secondary {
     flex: 1 1 12rem;
   }
