@@ -211,10 +211,10 @@ figure {
 
 figure img {
   display: block;
-  width: min(100%, 16.5rem);
+  width: min(100%, 22rem);
   height: auto;
   background: #fff;
-  padding: 0.6rem;
+  padding: 0.85rem;
 }
 
 figcaption {
